@@ -10,7 +10,21 @@ class App extends Component {
       <div>
         <Header />
         <div className="container">
-          <Contact />
+          <Contact
+            name='usman'
+            email='usman@gmail.com'
+            phone='234-345-3456'
+          />
+          <Contact
+            name='usman'
+            email='usman@gmail.com'
+            phone='234-345-3456'
+          />
+          <Contact
+            name='usman'
+            email='usman@gmail.com'
+            phone='234-345-3456'
+          />
         </div>
       </div>
     )
