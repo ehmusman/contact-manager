@@ -1,0 +1,81 @@
+import React, { Component } from 'react'
+import { Consumer } from '../../Context'
+
+class AddForm extends Component {
+
+    state = {
+        name: '',
+        email: '',
+        phone: ''
+    };
+
+    onChange = (e) => {
+        this.setState({ [e.target.name]: e.target.value })
+    };
+    onSubmit = (e, state, dispatch) => {
+        e.preventDefault();
+        dispatch({
+            type: 'ADD_CONTACT',
+            payload: state
+        })
+        console.log(this.state)
+    }
+    render() {
+        const { name, email, phone } = this.state;
+        return (
+            <Consumer>
+                {value => {
+                    const { dispatch } = value;
+                    return (
+                        <div className="card mb-3">
+                            <h1 className="card-header">Add Contact</h1>
+                            <div className="card-body">
+                                <form onSubmit={this.onSubmit.bind(this, dispatch, this.state)}>
+                                    <div className="form-group">
+                                        <label htmlFor="name" className="h2">Name</label>
+                                        <input
+                                            type="text"
+                                            className="form-control form-control-lg mb-2"
+                                            placeholder="Enter Name..."
+                                            name="name"
+                                            value={name}
+                                            onChange={this.onChange}
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="email" className="h2">Email</label>
+                                        <input
+                                            type="email"
+                                            className="form-control form-control-lg mb-2"
+                                            placeholder="Enter Email..."
+                                            name="email"
+                                            value={email}
+                                            onChange={this.onChange}
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="phone" className="h2">Phone</label>
+                                        <input
+                                            type="text"
+                                            className="form-control form-control-lg mb-2"
+                                            placeholder="Enter phone..."
+                                            name="phone"
+                                            value={phone}
+                                            onChange={this.onChange}
+                                        />
+                                    </div>
+                                    <input type="submit"
+                                        className="btn btn-primary btn-block py-2"
+                                        value="Submit"
+                                    />
+                                </form>
+                            </div>
+                        </div>
+                    )
+                }}
+            </Consumer>
+        )
+    }
+}
+
+export default AddForm;
