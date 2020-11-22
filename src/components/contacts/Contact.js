@@ -23,7 +23,7 @@ class Contact extends Component {
                     const { dispatch } = value;
                     return (
                         <div className='card card-body mb-3'>
-                            <h1 className="card-header">
+                            <h1 className="card-header h3">
                                 {name} {" "}
                                 <i className="fas fa-sort-down" style={{ cursor: "pointer" }}
                                     onClick={() => this.setState({

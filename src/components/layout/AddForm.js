@@ -16,7 +16,7 @@ class AddForm extends Component {
     onSubmit = (dispatch, e) => {
         e.preventDefault();
         const { name, email, phone } = this.state;
-        if (name !== '' || email !== '' || phone !== '') {
+        if (name !== '' && email !== '' && phone !== '') {
             const newContact = {
                 id: uuid(),
                 name,
@@ -33,6 +33,9 @@ class AddForm extends Component {
                 phone: ''
             })
         }
+        else {
+            alert("please fill all fields")
+        }
     }
     render() {
         const { name, email, phone } = this.state;
@@ -42,11 +45,11 @@ class AddForm extends Component {
                     const { dispatch } = value;
                     return (
                         <div className="card mb-3">
-                            <h1 className="card-header">Add Contact</h1>
+                            <h1 className="card-header h2">Add Contact</h1>
                             <div className="card-body">
                                 <form onSubmit={this.onSubmit.bind(this, dispatch)}>
                                     <div className="form-group">
-                                        <label htmlFor="name" className="h2">Name</label>
+                                        <label htmlFor="name" className="h4">Name</label>
                                         <input
                                             type="text"
                                             className="form-control form-control-lg mb-2"
@@ -57,7 +60,7 @@ class AddForm extends Component {
                                         />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="email" className="h2">Email</label>
+                                        <label htmlFor="email" className="h4">Email</label>
                                         <input
                                             type="email"
                                             className="form-control form-control-lg mb-2"
@@ -68,7 +71,7 @@ class AddForm extends Component {
                                         />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="phone" className="h2">Phone</label>
+                                        <label htmlFor="phone" className="h4">Phone</label>
                                         <input
                                             type="text"
                                             className="form-control form-control-lg mb-2"
