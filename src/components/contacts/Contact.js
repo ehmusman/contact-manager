@@ -23,15 +23,16 @@ class Contact extends Component {
                     const { dispatch } = value;
                     return (
                         <div className='card card-body mb-3'>
-                            <h1 className="card-header h3">
+
+                            <h1 className="card-heading h3">
                                 {name} {" "}
-                                <i className="fas fa-sort-down" style={{ cursor: "pointer" }}
+                                <i className="fa fa-sort-down" style={{ cursor: "pointer" }}
                                     onClick={() => this.setState({
                                         showContactDetail: !this.state.showContactDetail
                                     })}
                                 >
                                 </i>
-                                <i className="fas fa-times" style={{ color: 'red', cursor: 'pointer', float: 'right' }}
+                                <i className="fa fa-times" style={{ color: 'red', cursor: 'pointer', float: 'right' }}
                                     onClick={this.onDeleteClick.bind(this, id, dispatch)}
                                 ></i>
                             </h1>
