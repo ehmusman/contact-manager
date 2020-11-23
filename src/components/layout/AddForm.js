@@ -89,7 +89,7 @@ class AddForm extends Component {
                                     />
 
                                     <input type="submit"
-                                        className="btn btn-primary btn-block py-2"
+                                        className="btn btn-dark btn-block py-2"
                                         value="Submit"
                                     />
                                 </form>
