@@ -9,8 +9,11 @@ class Header extends Component {
                     <a href="/" className="navbar-brand">
                         Contact Manager
                     </a>
-                    <div>
-                        <ul className="navbar-nav mr-auto">
+                    <button className="navbar-toggler" data-toggle="collapse" data-target="#navBarNav">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div id="navBarNav" className="collapse navbar-collapse">
+                        <ul id="navBarNav" className="navbar-nav ml-auto">
                             <li className="nav-item">
                                 <Link to="/" className="nav-link">
                                     <i className="fa fa-home"></i>  Home
@@ -26,7 +29,6 @@ class Header extends Component {
                                     <i className="fa fa-question"></i> About
                                 </Link>
                             </li>
-
                         </ul>
                     </div>
                 </div>
