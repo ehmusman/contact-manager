@@ -1,19 +1,15 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-
 class Header extends Component {
     render() {
         return (
-            <nav className="navbar navbar-expand-sm navbar-dark bg-danger mb-3 py-0">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-danger mb-3 py-0">
                 <div className='container'>
                     <a href="/" className="navbar-brand">
                         Contact Manager
                     </a>
-                    <button className="navbar-toggler" data-toggle="collapse" data-target="#navBarNav">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div id="navBarNav" className="collapse navbar-collapse">
-                        <ul id="navBarNav" className="navbar-nav ml-auto">
+                    <div>
+                        <ul className="navbar-nav ml-auto">
                             <li className="nav-item">
                                 <Link to="/" className="nav-link">
                                     <i className="fa fa-home"></i>  Home
