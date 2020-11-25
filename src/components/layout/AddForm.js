@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Consumer } from '../../Context'
 import TextInputGroup from './TextInputGroup'
-import uuid from 'uuid'
+// import uuid from 'uuid'
+import axios from 'axios'
 
 class AddForm extends Component {
 
@@ -32,11 +33,18 @@ class AddForm extends Component {
             return;
         }
         const newContact = {
-            id: uuid(),
+            // id: uuid(), we dont need uuid because most of the websites have increment operatio on comming data. so here the next post will have id===11
             name,
             email,
             phone
         }
+        axios.post("https://jsonplaceholder.typicode.com/users", newContact)
+            .then(res =>
+                dispatch({
+                    type: 'ADD_CONTACT',
+                    payload: res.data
+                })
+            )
         dispatch({
             type: 'ADD_CONTACT',
             payload: newContact
