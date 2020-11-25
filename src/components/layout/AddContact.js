@@ -4,7 +4,7 @@ import TextInputGroup from './TextInputGroup'
 // import uuid from 'uuid'
 import axios from 'axios'
 
-class AddForm extends Component {
+class AddContact extends Component {
 
     state = {
         name: '',
@@ -113,4 +113,4 @@ class AddForm extends Component {
     }
 }
 
-export default AddForm;
+export default AddContact;
