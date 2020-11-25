@@ -7,14 +7,25 @@ class Contact extends Component {
     state = {
         showContactDetail: false
     }
-    onDeleteClick = (id, dispatch) => {
-        axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`)
-            .then(res =>
-                dispatch({
-                    type: 'DELETE_CONTACT',
-                    payload: id
-                })
-            )
+    // onDeleteClick = (id, dispatch) => {
+
+    //     axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`)
+    //         .then(res =>
+    //             dispatch({
+    //                 type: 'DELETE_CONTACT',
+    //                 payload: id
+    //             })
+    //         )
+    // }
+    // async and await
+    onDeleteClick = async (id, dispatch) => {
+        // we cannot put async before the function arrow function name, it will give an error
+        await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`)
+        // we are not making a variable here because we are not getting anything back
+        dispatch({
+            type: 'DELETE_CONTACT',
+            payload: id
+        })
     }
 
 
