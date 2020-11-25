@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import Header from './components/layout/Header'
 import Contacts from './components/contacts/Contacts'
-import AddForm from './components/layout/AddForm'
+import AddContact from './components/layout/AddContact'
+import EditContact from './components/layout/EditContact'
 import { Provider } from './Context'
 import About from './components/pages/About'
 import NotFound from './components/pages/NotFound'
@@ -20,7 +21,8 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" component={Contacts} />
                 <Route exact path="/about" component={About} />
-                <Route exact path="/add/contact" component={AddForm} />
+                <Route exact path="/add/contact" component={AddContact} />
+                <Route exact path="/edit/contact/:id" component={EditContact} />
                 <Route component={NotFound} />
               </Switch>
             </div>
