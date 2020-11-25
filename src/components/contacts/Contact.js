@@ -18,14 +18,33 @@ class Contact extends Component {
     //         )
     // }
     // async and await
+    // onDeleteClick = async (id, dispatch) => {
+    //     // we cannot put async before the function arrow function name, it will give an error
+    //     await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`)
+    //     // we are not making a variable here because we are not getting anything back
+    //     dispatch({
+    //         type: 'DELETE_CONTACT',
+    //         payload: id
+    //     })
+    // }
+    // here is a problem if we want to delete the newly created item, we'll make a delete request to the actual data base. but here is the scnerio is different. newly created item with id===11 is created on our browser not on the JSON place holder. so on clicking the delete button we'll get an error. and item/contact will also not deleted. to resolve this problem we'll use try{} and catch(){} methods as following
+
     onDeleteClick = async (id, dispatch) => {
         // we cannot put async before the function arrow function name, it will give an error
-        await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`)
-        // we are not making a variable here because we are not getting anything back
-        dispatch({
-            type: 'DELETE_CONTACT',
-            payload: id
-        })
+        try {
+            await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`)
+            // we are not making a variable here because we are not getting anything back
+            dispatch({
+                type: 'DELETE_CONTACT',
+                payload: id
+            })
+        } catch (e) {
+            dispatch({
+                type: 'DELETE_CONTACT',
+                payload: id
+            })
+        }
+
     }
 
 
