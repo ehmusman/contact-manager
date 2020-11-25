@@ -43,8 +43,20 @@ class AddForm extends Component {
             this.setState({ errors: { phone: "phone is Required" } });
             return;
         }
+        const { id } = this.props.match.params;
+
+        const updateContact = {
+            name,
+            email,
+            phone
+        };
+        const res = await axios.put(`https://jsonplaceholder.typicode.com/users/${id}`, updateContact)
 
 
+        dispatch({
+            type: "UPDATE_CONTACT",
+            payload: res.data
+        })
         this.setState({
             name: '',
             email: '',
