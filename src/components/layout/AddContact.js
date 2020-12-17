@@ -67,7 +67,7 @@ class AddContact extends Component {
                     const { dispatch } = value;
                     return (
                         <div className="card mb-3">
-                            <h1 className="card-header h2">Add Contact</h1>
+                            <h5 className="card-header">Add Contact</h5>
                             <div className="card-body">
                                 <form
                                     onSubmit={this.onSubmit.bind(this, dispatch)}>

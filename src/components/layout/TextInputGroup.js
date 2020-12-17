@@ -5,7 +5,7 @@ import classnames from 'classnames'
 export default function TextInputGroup({ label, name, type, placeholder, value, onChange, error }) {
     return (
         <div className="form-group">
-            <label htmlFor={name} className="h4">{label}</label>
+            <label htmlFor={name} className="h6">{label}</label>
             <input
                 type={type}
                 className={classnames("form-control form-control-lg mb-2", {

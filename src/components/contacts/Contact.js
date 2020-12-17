@@ -59,7 +59,7 @@ class Contact extends Component {
                     return (
                         <div className='card card-body mb-3'>
 
-                            <h1 className="card-heading h3">
+                            <h5 className="card-heading h5">
                                 {name} {" "}
                                 <i className="fa fa-sort-down" style={{ cursor: "pointer" }}
                                     onClick={() => this.setState({
@@ -83,7 +83,7 @@ class Contact extends Component {
                                     ></i>
                                 </Link>
 
-                            </h1>
+                            </h5>
                             {showContactDetail ?
                                 (
                                     <ul className="list-group">
